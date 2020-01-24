@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MCB: Mechenical Compnents Benchmark</title>
+
+  <!-- Bootstrap core CSS -->
+  <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- Custom styles for this template -->
+  <link type="text/css" rel="stylesheet" href="{% static 'css/scrolling-nav.css' %}">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <img src="{% static 'img/logo.png' %}" alt="logo" class="img-fluid" style="max-width: 50%">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#abstract">Abstract</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#annotation">Annotation Tool</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Welcome to MCB</h1>
+      <p class="lead">A Large-scale Mechanical Components Benchmark for Deep Neural Networks</p>
+    </div>
+  </header>
+
+  <section id="abstract">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Paper Abstract</h2>
+        <p class="lead">
+          We introduce a large-scale mechanical components benchmark for the classification and retrieval tasks named Mechanical Components Benchmark (MCB): a large-scale dataset of 3D objects of mechanical components.
+          The dataset enables the data-driven feature learning for the mechanical components.
+          Exploring the descriptor for mechanical components is essential to the computer vision,
+          mechanical design and manufacturing  applications.
+          However, limited works have been done for creating the annotated mechanical components dataset on a large-scale.
+          This is because annotating mechanical components require engineering knowledge, and acquiring a 3D model is challenging.
+          With our annotated dataset, we benchmarked seven state-of-the-art deep learning classification methods in three categories,
+          namely: (1) point clouds, (2) volumetric representation in voxel grids, and (3) view-based representation.
+          We further evaluated the features representation of each trained classifier by performing mechanical components retrieval to examine the behavior of each method on mechanical components.
+          The main contributions are the creation of a large-scale annotated mechanical component benchmark, defining hierarchy taxonomy of mechanical components, and
+          benchmark the effectiveness of deep learning shape classifiers on the mechanical components.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="annotation" class="bg-light">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Annotation Tool</h2>
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.
+        </p>
+      </div>
+    </div>
+    <div class="container" style="width: 800px;">
+      <div class="row" style="margin-top: 40px">
+        <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe type="video/mp4" class="embed-responsive-item" src="{% static 'img/Annotation_video.mp4' %} "></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 40px">
+      <a href="http://128.46.190.99:5000/" class="mx-auto d-block">
+        <img src="{% static 'img/try.png' %}" alt="try" class="mx-auto d-block" style="width: 30%">
+      </a>
+    </div>
+  </section>
+
+  <section id="dataset">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Dataset</h2>
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.
+        </p>
+      </div>
+    </div>
+    <div class="container" style="width:800px">
+      <div class="row" style="margin-top: 40px">
+        <div class="col">
+          <a href="{% url 'radial_tree' %}">
+            <img src="{% static 'img/radial_tree.png' %}" alt="radial_tree" class="img-fluid shadow" style="max-width: 80%">
+            <div class="caption">
+              <!-- <p>Lorem ipsum...</p> -->
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{% url 'hori_tree' %}">
+            <img src="{% static 'img/hori_tree.png' %}" alt="hori_tree" class="float-right shadow" style="max-width: 77%">
+            <div class="caption">
+              <!-- <p>Lorem ipsum...</p> -->
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; CVPR 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script type="text/javascript" src="{% static 'js/jquery.easing.min.js'%}"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script type="text/javascript" src="{% static 'js/scrolling-nav.js'%}"></script>
+
+</body>
+
+</html>
