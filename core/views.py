@@ -14,3 +14,6 @@ def radial(request):
 
 def hori(request):
     return render_to_response('hori_tree.html')
+
+def hat(request):
+    return render_to_response('hat.html')

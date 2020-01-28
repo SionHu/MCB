@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import homepage, radial, hori
+from core.views import homepage, radial, hori, hat
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -23,5 +23,6 @@ urlpatterns = [
     path('', homepage, name='homepage'),
     path('radial/', radial, name='radial_tree'),
     path('hori/', hori, name='hori_tree'),
+    path('hat/', hat, name='hat'),
     path('admin/', admin.site.urls),
 ]
