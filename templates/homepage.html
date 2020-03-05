@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link href="{% static 'img/mcb_favicon.png' %}" rel="icon">
 
   <title>MCB: Mechenical Compnents Benchmark</title>
 
@@ -40,9 +41,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="{% url 'hat' %}">HAT</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -60,17 +61,7 @@
       <div class="col-lg-8 mx-auto">
         <h2>Paper Abstract</h2>
         <p class="lead">
-          We introduce a large-scale mechanical components benchmark for the classification and retrieval tasks named Mechanical Components Benchmark (MCB): a large-scale dataset of 3D objects of mechanical components.
-          The dataset enables the data-driven feature learning for the mechanical components.
-          Exploring the descriptor for mechanical components is essential to the computer vision,
-          mechanical design and manufacturing  applications.
-          However, limited works have been done for creating the annotated mechanical components dataset on a large-scale.
-          This is because annotating mechanical components require engineering knowledge, and acquiring a 3D model is challenging.
-          With our annotated dataset, we benchmarked seven state-of-the-art deep learning classification methods in three categories,
-          namely: (1) point clouds, (2) volumetric representation in voxel grids, and (3) view-based representation.
-          We further evaluated the features representation of each trained classifier by performing mechanical components retrieval to examine the behavior of each method on mechanical components.
-          The main contributions are the creation of a large-scale annotated mechanical component benchmark, defining hierarchy taxonomy of mechanical components, and
-          benchmark the effectiveness of deep learning shape classifiers on the mechanical components.
+          We introduce a large-scale mechanical components benchmark for the classification and retrieval tasks named Mechanical Components Benchmark (MCB): a large-scale dataset of 3D objects of mechanical components. The dataset enables the data-driven feature learning for the mechanical components. Exploring the descriptor for mechanical components is essential to the computer vision, manufacturing, and mechanical engineering domain. However, limited works have been done for creating the annotated mechanical components dataset on a large-scale. This is because annotating mechanical components require engineering knowledge and acquiring a 3D model is challenging. With our annotated dataset, we benchmarked seven state-of-the-art deep learning classification methods in three categories, namely: (1) point clouds, (2) volumetric representation in voxel grids, and (3) view-based representation. We further evaluated the features representation of each trained classifier by performing mechanical components retrieval to examine the behavior of each method on mechanical components. The main contributions of the paper are the creation of a large-scale annotated mechanical component benchmark and benchmarking the effectiveness of deep learning shape classifiers on the mechanical components.
         </p>
       </div>
     <!-- </div> -->
@@ -81,7 +72,8 @@
       <div class="col-lg-8 mx-auto">
         <h2>Annotation Tool</h2>
         <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.
+          We developed a web-based platform to manage large-scale dataset functioning, collecting, viewing, filtering, and annotating data.
+          Web-based applications have the advantage that users are free of installation and can easily access to the platform from any computer with internet connection. This accessibility accelerated annotation process. We utilized the tool to trigger the scrapper collecting CAD models, also filtering and annotating the data with intuitive user interfaces. A dataset managing platform visualizes multi-view images of each engineering part, which gives users a more comprehensive understanding of the mechanical part during filtering and annotating.
         </p>
       </div>
     <!-- </div> -->
@@ -95,8 +87,8 @@
     </div>
 
     <div style="margin-top: 40px">
-      <a href="http://128.46.190.99:5000/" class="mx-auto d-block">
-        <img src="{% static 'img/try.png' %}" alt="try" class="mx-auto d-block" style="width: 30%">
+      <a href="http://128.46.98.99:5000/" class="mx-auto d-block">
+        <img src="{% static 'img/try.png' %}" alt="try" class="mx-auto d-block" style="width: 20%">
       </a>
     </div>
   </section>
@@ -106,7 +98,25 @@
       <div class="col-lg-8 mx-auto">
         <h2>Dataset</h2>
         <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.
+          MCB has a total number of 58,696 mechanical components with 68 classes.
+        </p>
+        <p>
+          For orientation alignment of the dataset, objects from TraceParts are aligned. Still, the objects from the other two sources (30%
+          of the objects) are not consistently oriented.
+          We did not perform additional alignments as many object classes do not possess consistent orientations due to a variety of continuous/discrete symmetries.
+          On the other hand, having unaligned models in shape classification and retrieval tasks helps to evaluate the generalization of
+          the shape descriptors.
+          Unlike 3D Warehouse and GrabCAD that provide data from general usages, TraceParts stores data from the manufacturing companies.
+          The CAD models from manufacturing companies show a tiny variation because they follow the parameterized catalogs for standardization.
+          Therefore, to see the effect of data that has dense distribution and orientation invariant property, we built two forms of dataset for the experiment
+        </p>
+        <ul>
+          <li>Dataset A (MCB): Aggregated data from TraceParts, 3DWarehouse, and GrabCAD.</li>
+          <li>Dataset B: Aggregated data from 3D Warehouse and GrabCAD. </li>
+        </ul>
+        <p>
+          The dataset A has the same statistic with the original MCB dataset, and the dataset B has 18,038 data with 25 classes.
+          The detailed statistics of the dataset B is explained in supplementary material.
         </p>
       </div>
     <!-- </div> -->
@@ -135,7 +145,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; CVPR 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; ECCV 2020</p>
     </div>
     <!-- /.container -->
   </footer>
